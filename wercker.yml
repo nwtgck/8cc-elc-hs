@@ -1,5 +1,10 @@
 # Use a image in Docker hub
 box: fpco/stack-build:lts-10.3
+
+# Set timeout
+# (from: http://devcenter.wercker.com/docs/faq/how-to-bypass-timeouts)
+no-response-timeout: 60
+
 build:
   steps:
     - script:
@@ -15,8 +20,7 @@ build:
     - script:
       name: "Build (NOTE: it takes a lot of time)"
       # (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
-      # ("--verbosity debug" is for outputing something: https://github.com/commercialhaskell/stack/issues/217#issuecomment-110290161)
-      code: stack build --verbosity debug
+      code: stack build
 
     # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)    
     - script:
