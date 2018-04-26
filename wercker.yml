@@ -19,6 +19,10 @@ build:
       code: stack --version
 
     - script:
+      name: Install GHC
+      code: stack --no-terminal --install-ghc test --only-dependencies
+
+    - script:
       name: "Build (NOTE: it takes a lot of time)"
       # (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
       code: stack build :8cc-hs
