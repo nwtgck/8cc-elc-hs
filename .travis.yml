@@ -47,7 +47,8 @@ after_script:
 
 script:
 # Build (NOTE: it takes a lot of time)
-- stack build --fast
+# (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
+- stack build
 
 # Try to compile a C program and run it
 # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)
