@@ -1,0 +1,32 @@
+# Use a image in Docker hub
+box: fpco/stack-build:lts-10.3
+build:
+  steps:
+    - script:
+      name: Stack version
+      code: stack --version
+    - script:
+      name: Stack upgrade
+      code: stack upgrade
+    - script:
+      name: Stack version again
+      code: stack --version
+      
+    - script:
+      name: "Build (NOTE: it takes a lot of time)"
+      # (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
+      code: stack build
+
+    # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)    
+    - script:
+      name: Compile a C program to ELVM IR
+      code: cat example_c/hello.c | stack exec 8cc-hs > hello.eir
+    - script:
+      name: Compile ELVM IR to executable
+      code: (echo x86 && cat hello.eir) | stack exec elc-hs > a.out
+    - script:
+      name: Give executable permission
+      code: chmod +x a.out
+    - script:
+      name: Execute the binary
+      code: ./a.out
