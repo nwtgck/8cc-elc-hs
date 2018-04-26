@@ -15,7 +15,8 @@ build:
     - script:
       name: "Build (NOTE: it takes a lot of time)"
       # (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
-      code: stack build
+      # ("--verbosity debug" is for outputing something: https://github.com/commercialhaskell/stack/issues/217#issuecomment-110290161)
+      code: stack build --verbosity debug
 
     # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)    
     - script:
