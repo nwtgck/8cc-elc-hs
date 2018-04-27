@@ -1,0 +1,41 @@
+# Use a image in Docker hub
+box: fpco/stack-build:lts-10.3
+
+# Set timeout
+# (from: http://devcenter.wercker.com/docs/faq/how-to-bypass-timeouts)
+no-response-timeout: 60
+command-timeout: 60
+
+build:
+  steps:
+    - script:
+      name: Stack version
+      code: stack --version
+    - script:
+      name: Stack upgrade
+      code: stack upgrade
+    - script:
+      name: Stack version again
+      code: stack --version
+
+    - script:
+      name: Install GHC
+      code: stack --no-terminal --install-ghc test --only-dependencies
+
+    - script:
+      name: "Build (NOTE: it takes a lot of time)"
+      code: stack build --fast
+
+    # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)    
+    - script:
+      name: Compile a C program to ELVM IR
+      code: cat example_c/hello.c | stack exec 8cc-hs > hello.eir
+    - script:
+      name: Compile ELVM IR to executable
+      code: (echo hs && cat hello.eir) | stack exec elc-hs > hello.hs
+    - script:
+      name: Compile generated haskell
+      code: stack ghc hello.hs -- -o a.out
+    - script:
+      name: Execute the binary
+      code: ./a.out
