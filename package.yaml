@@ -26,21 +26,19 @@ executables:
   8cc-hs:
     main:                8cc.hs
     source-dirs:         8cc
-    # ghc-options:
-    # - -threaded
-    # - -rtsopts
-    # - -with-rtsopts=-N
     dependencies:
     - array
+    - mtl
+    - transformers
+    - exceptions
   elc-hs:
     main:                elc.hs
     source-dirs:         elc
-    # ghc-options:
-    # - -threaded
-    # - -rtsopts
-    # - -with-rtsopts=-N
     dependencies:
     - array
+    - mtl
+    - transformers
+    - exceptions
 
 tests:
   8cc-hs-test:
