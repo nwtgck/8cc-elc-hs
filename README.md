@@ -1,5 +1,5 @@
-# 8cc-hs
-[![wercker status](https://app.wercker.com/status/9a093244d45b5bc23b6a4cd80e5b121f/s/develop "wercker status")](https://app.wercker.com/project/byKey/9a093244d45b5bc23b6a4cd80e5b121f)
+# 8cc-elc-hs
+[![wercker status](https://app.wercker.com/status/58d52d173d227199e549fdf158f44561/s/develop "wercker status")](https://app.wercker.com/project/byKey/58d52d173d227199e549fdf158f44561)
 
 C Compiler written in Haskell powered by [8cc](https://github.com/rui314/8cc) and [ELVM](https://github.com/shinh/elvm).
 

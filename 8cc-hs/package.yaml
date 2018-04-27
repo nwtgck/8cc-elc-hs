@@ -1,39 +1,30 @@
 name:                8cc-hs
 version:             0.1.0.0
-github:              "nwtgck/8cc-hs"
+github:              "nwtgck/8cc-elc-hs"
 license:             BSD3
 author:              "Ryo Ota"
 maintainer:          "nwtgck@gmail.com"
 copyright:           "2018 Ryo Ota"
 
 extra-source-files:
-- README.md
 - CHANGELOG.md
 
 # Metadata used when publishing your package
-synopsis:            C compiler written in Haskell
+synopsis:            C compiler frontend written in Haskell
 category:            Compiler
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/nwtgck/8cc-hs#readme>
+description:         Please see the README on Github at <https://github.com/nwtgck/8cc-elc-hs#readme>
 
 dependencies:
 - base >= 4.7 && < 5
 
 executables:
   8cc-hs:
-    main:                8cc.hs
-    source-dirs:         8cc
-    dependencies:
-    - array
-    - mtl
-    - transformers
-    - exceptions
-  elc-hs:
-    main:                elc.hs
-    source-dirs:         elc
+    main:                Main.hs
+    source-dirs:         app
     dependencies:
     - array
     - mtl
