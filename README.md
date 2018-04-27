@@ -36,3 +36,9 @@ stack ghc hello.hs
 ```
 
 Important thing is that `8cc-hs` and `elc-hs` are written in pure Haskell.
+
+
+## References
+
+* [yutopp/8cc.rill](https://github.com/yutopp/8cc.rill)
+* [rhysd/8cc.vim: C Compiler written in Vim script](https://github.com/rhysd/8cc.vim)
