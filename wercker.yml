@@ -35,10 +35,10 @@ build:
       code: cat example_c/hello.c | stack exec 8cc-hs > hello.eir
     - script:
       name: Compile ELVM IR to executable
-      code: (echo x86 && cat hello.eir) | stack exec elc-hs > a.out
+      code: (echo hs && cat hello.eir) | stack exec elc-hs > hello.hs
     - script:
-      name: Give executable permission
-      code: chmod +x a.out
+      name: Compile generated haskell
+      code: stack ghc hello.hs -- -o a.out
     - script:
       name: Execute the binary
       code: ./a.out
