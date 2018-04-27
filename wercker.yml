@@ -4,6 +4,7 @@ box: fpco/stack-build:lts-10.3
 # Set timeout
 # (from: http://devcenter.wercker.com/docs/faq/how-to-bypass-timeouts)
 no-response-timeout: 60
+command-timeout: 60
 
 build:
   steps:
@@ -16,7 +17,7 @@ build:
     - script:
       name: Stack version again
       code: stack --version
-      
+
     - script:
       name: "Build (NOTE: it takes a lot of time)"
       # (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
