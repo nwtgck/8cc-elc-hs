@@ -24,12 +24,10 @@ build:
 
     - script:
       name: "Build (NOTE: it takes a lot of time)"
-      # (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
-      code: stack build :8cc-hs
+      code: stack build --fast :8cc-hs
     - script:
       name: "Build (NOTE: it takes a lot of time)"
-      # (Don't use --fast flag: https://www.ncaq.net/2017/06/14/)
-      code: stack build :elc-hs
+      code: stack build --fast :elc-hs
 
     # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)    
     - script:
