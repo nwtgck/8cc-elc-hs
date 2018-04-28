@@ -24,10 +24,10 @@ build:
 
     - script:
       name: "Build 8cc (NOTE: it takes a lot of time)"
-      code: stack build --fast --ghc-options="-funfolding-use-threshold=0 -funfolding-creation-threshold=0 -fno-float-in -fno-full-laziness -fno-do-lambda-eta-expansion -fno-do-eta-reduction -fsimpl-tick-factor=0" 8cc-hs:exe:8cc-hs
+      code: stack build --ghc-options="-funfolding-use-threshold=0 -funfolding-creation-threshold=0 -fno-float-in -fno-full-laziness -fno-do-lambda-eta-expansion -fno-do-eta-reduction -fsimpl-tick-factor=0" 8cc-hs:exe:8cc-hs
     - script:
       name: "Build elc (NOTE: it takes a lot of time)"
-      code: stack build --fast --ghc-options="-funfolding-use-threshold=0 -funfolding-creation-threshold=0 -fno-float-in -fno-full-laziness -fno-do-lambda-eta-expansion -fno-do-eta-reduction -fsimpl-tick-factor=0" elc-hs:exe:elc-hs
+      code: stack build --ghc-options="-funfolding-use-threshold=0 -funfolding-creation-threshold=0 -fno-float-in -fno-full-laziness -fno-do-lambda-eta-expansion -fno-do-eta-reduction -fsimpl-tick-factor=0" elc-hs:exe:elc-hs
 
     # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)    
     - script:
