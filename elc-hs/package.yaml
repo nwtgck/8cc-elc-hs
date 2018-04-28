@@ -24,16 +24,16 @@ dependencies:
 library:
  source-dirs: src
  dependencies:
- - array
  - mtl
- - transformers
- - exceptions
+ - elvm-util
 
 executables:
   elc-hs:
     main:                Main.hs
     source-dirs:         app
     dependencies:
+    - array
+    - transformers
     - elc-hs
 
 tests:

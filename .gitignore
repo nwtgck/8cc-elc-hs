@@ -1,5 +1,10 @@
 /.stack-work
+
 /8cc-hs/.stack-work/
 /8cc-hs/8cc-hs.cabal
+
 /elc-hs/.stack-work
 /elc-hs/elc-hs.cabal
+
+/elvm-util/.stack-work
+/elvm-util/elvm-util.cabal

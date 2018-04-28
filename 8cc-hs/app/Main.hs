@@ -3,7 +3,11 @@
 
 module Main where
 
+import Data.Array.IO
+import Data.IORef
+import Control.Monad.Trans.Identity
+
 import X8cc
 
 main :: IO ()
-main = runIdentityT (generalMain @Array.IO.IOUArray @IdentityT @IO @IORef)
+main = runIdentityT (generalMain @IOUArray @IdentityT @IO @IORef)

@@ -38,6 +38,7 @@ resolver: lts-10.3
 packages:
 - 8cc-hs
 - elc-hs
+- elvm-util
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
 # extra-deps: []
