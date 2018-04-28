@@ -21,15 +21,20 @@ description:         Please see the README on GitHub at <https://github.com/nwtg
 dependencies:
 - base >= 4.7 && < 5
 
+library:
+ source-dirs: src
+ dependencies:
+ - array
+ - mtl
+ - transformers
+ - exceptions
+
 executables:
   elc-hs:
     main:                Main.hs
     source-dirs:         app
     dependencies:
-    - array
-    - mtl
-    - transformers
-    - exceptions
+    - elc-hs
 
 tests:
   elc-hs-test:

@@ -16,20 +16,25 @@ category:            Compiler
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/nwtgck/8cc-elc-hs#readme>
+description:         Please see the README on GitHub at <https://github.com/nwtgck/8cc-elc-hs#readme>
 
 dependencies:
 - base >= 4.7 && < 5
+
+library:
+ source-dirs: src
+ dependencies:
+ - array
+ - mtl
+ - transformers
+ - exceptions
 
 executables:
   8cc-hs:
     main:                Main.hs
     source-dirs:         app
     dependencies:
-    - array
-    - mtl
-    - transformers
-    - exceptions
+    - 8cc-hs
 
 tests:
   8cc-hs-test:
