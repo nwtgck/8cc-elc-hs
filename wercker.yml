@@ -23,8 +23,11 @@ build:
       code: stack --no-terminal --install-ghc test --only-dependencies
 
     - script:
-      name: "Build (NOTE: it takes a lot of time)"
-      code: stack build --fast
+      name: "Build 8cc (NOTE: it takes a lot of time)"
+      code: stack build --fast 8cc-hs:exe:8cc-hs
+    - script:
+      name: "Build elc (NOTE: it takes a lot of time)"
+      code: stack build --fast elc-hs:exe:elc-hs
 
     # (from: https://github.com/yutopp/8cc.rill/blob/95eb927561cde2ec72197b0da7bbaf7689e1efa9/Makefile#L15)    
     - script:
