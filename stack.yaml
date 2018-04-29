@@ -40,7 +40,9 @@ packages:
 - elc-hs
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
-# extra-deps: []
+extra-deps:
+- git: https://github.com/nwtgck/elvm-util-haskell.git
+  commit: 53c6bfacc0fb6f78b4ef621c44e293e3d88409cd
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

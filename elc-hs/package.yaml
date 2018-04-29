@@ -30,6 +30,7 @@ executables:
     - mtl
     - transformers
     - exceptions
+    - elvm-util
 
 tests:
   elc-hs-test:
